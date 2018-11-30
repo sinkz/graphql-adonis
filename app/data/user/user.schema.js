@@ -4,6 +4,15 @@ const userTypes = `
         id: Int!
         username: String!
         email: String!
+        created_at: String
+    }
+
+    type UserLoggedIn {
+        id: Int!
+        username: String!
+        email: String!
+        created_at: String
+        token: String
     }
 `;
 const userQueries = `
@@ -11,6 +20,7 @@ const userQueries = `
 `;
 
 const userMutations = `
+    login (email: String!, password: String!): UserLoggedIn
     createUser (username: String!, email: String!, password: String!): User
 `;
 
